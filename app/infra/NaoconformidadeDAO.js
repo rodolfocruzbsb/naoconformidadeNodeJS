@@ -2,8 +2,12 @@ function NaoconformidadeDAO(connection){
 	this._connection = connection;
 }
 
-NaoconformidadeDAO.prototype.lista = function(callback) {
+NaoconformidadeDAO.prototype.listar = function(callback) {
 	this._connection.query('SELECT * FROM ocorrencia', callback);
+} 
+
+NaoconformidadeDAO.prototype.salvar = function(naoconformidade, callback) {
+	this._connection.query('INSERT INTO ocorrencia SET ?', naoconformidade, callback);
 } 
 
 module.exports = function() {

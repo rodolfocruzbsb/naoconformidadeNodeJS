@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+	function fnInicializaDateNow() {
+		document.getElementById('dt_ocorrencia').value = new Date().toDateInputValue();
+	}
+</script>
+</head>
+<body>
+	<form action="/naoconformidade/salvar" method="post">
+		<div>
+			<label for="data">Data</label> 
+			<input type="date" id="data" name="data">
+		</div>
+
+		<div>
+			<label for="descricao">Tipo de Ocorrência</label> 
+			<select id="descricao" name="descricao">
+				<option>Falta de uso do capacete de seguranca</option>
+				<option>Falta de uso de colete</option>
+				<option>Sem luvas de seguranca</option>
+				<option>Sem botas</option>
+			</select>
+		</div>
+		
+		<input type="submit" value ="Gravar" />
+
+	</form>
+</body>
+</html>
