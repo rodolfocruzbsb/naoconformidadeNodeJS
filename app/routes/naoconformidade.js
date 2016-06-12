@@ -61,5 +61,7 @@ module.exports = function(app){
 		dao.salvar(naoconformidade, function(err, results){
 			res.redirect('/naoconformidade');		
 		});
+		
+		connection.end();
 	});
 }
