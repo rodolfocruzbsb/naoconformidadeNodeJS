@@ -23,46 +23,67 @@
 </head>
 
 <body>
-	
-	<h2>Entrar</h2>
-	<form action="/login" method="post">
-		
-		<div>
-			<label for="perfil">Tipo de Ocorrência</label> 
-			<select id="perfil" name="perfil">
-				<option value="AUDITOR">Auditor - Gerar Não conformidades</option>
-				<option value="FISCAL">Fiscal - Visualizar Não Conformidades</option>
-			</select>
+	<div class="container-fluid">
+		<div class="panel-heading">
+			<h1>Entrar</h1>
 		</div>
 		
-		<input type="submit" value ="Entrar" />
-
-	</form>
-	
-	<br/>
-	<br/>
-
-	<p>Top 10 Ocorrências de Não-Conformidade</p>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>Data</th>
-				<th>Ocorrência</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% for(var i=0; i< 10;i++){%>
-				<tr>
-					<td>
-						<%=lista[i].data%>
-					</td>
-					<td>
-						<%=lista[i].descricao%>
-					</td>
-				</tr>
-			<%}%>
-		</tbody>
-	</table>
+		<div class="panel-body">
+		
+		
+			<form action="/login" method="post">
+				
+				<div class="col-md-12">
+					<div class="col-md-4">
+						 <div class="form-group"> 
+							<label for="perfil">Perfil</label> 
+							<select id="perfil" name="perfil" class="form-control">
+								<option value="AUDITOR">Auditor - Gerar Não conformidades</option>
+								<option value="FISCAL">Fiscal - Visualizar Não Conformidades</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12">
+					<div class="col-md-4">				
+						<div class="form-actions" style="float: right;">
+							<input type="submit" value ="Entrar" class="btn btn-default"/>
+						</div>
+					</div>
+				</div>
+		
+			</form>
+			
+			<div class="col-md-12">&nbsp;</div>
+			
+			<div class="col-md-12">&nbsp;</div>
+			
+			<div class="col-md-12">
+				<table class="table table-bordered table-condensed">
+					<caption>Top 5 Ocorrências de Não-Conformidade</caption>
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Ocorrência</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(var i=0; i< 5;i++){%>
+							<tr>
+								<td>
+									<%=lista[i].data%>
+								</td>
+								<td>
+									<%=lista[i].descricao%>
+								</td>
+							</tr>
+						<%}%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

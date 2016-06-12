@@ -22,34 +22,48 @@
 </head>
 
 <body>
-	<h2>Lista de Não-Conformidades</h2>
-	
-	<div>
-		<a href="/" class="btn btn-default">Sair</a>
+	<div class="container-fluid">
+
+		<div class="col-md-12">
+			<div class="col-md-2">
+				<h1>Listagem</h1>
+			</div>
+			<div class="col-md-2">
+				<h1><a href="/" class="btn btn-default">Sair</a></h1>
+			</div>
+		</div> 
+
+		
+		<div class="panel-body">
+		
+			<div class="col-md-12">
+			
+				<table class="table table-bordered table-condensed">
+					
+					<caption>Ocorrências de Não-Conformidade registradas</caption>
+					
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Ocorrência</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(var i=0; i< lista.length;i++){%>
+							<tr>
+								<td>
+									<%=lista[i].data%>
+								</td>
+								<td>
+									<%=lista[i].descricao%>
+								</td>
+							</tr>
+						<%}%>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
-	
-	<br><br>
-	
-	<table border="1">
-		<thead>
-			<tr>
-				<th>Data</th>
-				<th>Ocorrência</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% for(var i=0; i< lista.length;i++){%>
-				<tr>
-					<td>
-						<%=lista[i].data%>
-					</td>
-					<td>
-						<%=lista[i].descricao%>
-					</td>
-				</tr>
-			<%}%>
-		</tbody>
-	</table>
 </body>
 
 </html>
