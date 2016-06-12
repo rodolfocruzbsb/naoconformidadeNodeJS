@@ -20,9 +20,7 @@ module.exports = function(app){
 	
 	app.post('/login', function(req, res){
 		
-		var login = req.body;
-		
-		var connection = app.infra.connectionFactory();
+		var login = req.body;				
 		
 		console.log(login);
 		
