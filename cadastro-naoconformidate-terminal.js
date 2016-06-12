@@ -20,7 +20,7 @@ var client = http.request(configuracoes, function(res){
 
 var naoconformidade = {
 	descricao: 'Sem uso de colete',
-	data: '2016-06-11 20:57:00'
+	data: ''
 };
 
 client.end(JSON.stringify(naoconformidade));
