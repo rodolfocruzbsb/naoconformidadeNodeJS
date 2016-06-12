@@ -19,17 +19,30 @@
 
 	<!-- Bootstrap JavaScript -->
 	<script src="/3th-party/bootstrap/js/bootstrap.min.js" ></script>
+	
 </head>
 
 <body>
-	<h2>Lista de Não-Conformidades</h2>
 	
-	<div>
-		<a href="/" class="btn btn-default">Sair</a>
-	</div>
+	<h2>Entrar</h2>
+	<form action="/login" method="post">
+		
+		<div>
+			<label for="perfil">Tipo de Ocorrência</label> 
+			<select id="perfil" name="perfil">
+				<option value="AUDITOR">Auditor - Gerar Não conformidades</option>
+				<option value="FISCAL">Fiscal - Visualizar Não Conformidades</option>
+			</select>
+		</div>
+		
+		<input type="submit" value ="Entrar" />
+
+	</form>
 	
-	<br><br>
-	
+	<br/>
+	<br/>
+
+	<p>Top 10 Ocorrências de Não-Conformidade</p>
 	<table border="1">
 		<thead>
 			<tr>
@@ -38,7 +51,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(var i=0; i< lista.length;i++){%>
+			<% for(var i=0; i< 10;i++){%>
 				<tr>
 					<td>
 						<%=lista[i].data%>
