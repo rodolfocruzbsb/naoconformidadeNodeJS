@@ -1,5 +1,5 @@
 var app = require('./config/express')();
 
 app.listen(3000, function(){
-	console.log('Servidor modendo... manda bala! =)');
+	console.log('Servidor moendo... manda bala! =)');
 });

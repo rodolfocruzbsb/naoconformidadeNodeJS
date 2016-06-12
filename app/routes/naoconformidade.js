@@ -22,7 +22,8 @@ module.exports = function(app){
 	});	
 	
 	app.get('/naoconformidade/input', function(req, res){
-		res.render('naoconformidade/input.ejs');
+		
+		res.render('naoconformidade/input.ejs', {errosValidacao: null});
 	});
 	
 	app.post('/naoconformidade', function(req, res){
@@ -30,11 +31,14 @@ module.exports = function(app){
 		var naoconformidade = req.body;
 
 		//Validações possíveis graças ao express-validator :)
-		var validatorData = req.assert('data', 'Data é obrigatória');
-		validatorData.notEmpty();
+		req.assert('data', 'Data é obrigatória').notEmpty();
+		
 		var erros = req.validationErrors();
+		
 		if(erros){
-			res.sender('naoconformidade/input');
+			
+			res.render('naoconformidade/input', {errosValidacao: {}});
+
 			return;
 		}
 		
