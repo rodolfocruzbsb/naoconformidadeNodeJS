@@ -49,7 +49,7 @@
 			<div class="col-md-12">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="data">Data</label> 
+						<label for="data">Data(aaaa-mm-dd HH:mm:ss Ex: 2016-06-17 04:04:04)</label> 
 						<input type="date" class="form-control" id="data" name="data" value="<%= naoconformidade.data%>">
 					</div>
 				</div>
@@ -79,8 +79,17 @@
 		
 		<script type="text/javascript">
 			(function() {
-				document.getElementById('data').value = new Date();
+				var agora = new Date();
+				
+				document.getElementById('data').value = 
+					agora.getFullYear() + "-" + ajustarValor(agora.getMonth()) + "-" + ajustarValor(agora.getDate()) + " "
+						+ ajustarValor(agora.getHours()) + ":" + ajustarValor(agora.getMinutes()) + ":" + ajustarValor(agora.getSeconds());
 			})();
+			
+			function ajustarValor(value){
+				var intValue = parseInt(value);
+				return intValue < 10 ? "0"+intValue : intValue;
+			}
 		</script>
 	</div>
 </body>

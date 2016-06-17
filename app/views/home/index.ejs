@@ -59,6 +59,13 @@
 			
 			<div class="col-md-12">&nbsp;</div>
 			
+			<div id="div-msg" class="col-md-12" style="display: none">
+				<div class="alert alert-info alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <strong>Info!</strong> Nova Não Conformidade gerada <span id="info_nc"></span>.
+				</div>
+			</div>
+			
 			<div class="col-md-12">
 				<table class="table table-bordered table-condensed">
 					<caption>Top 5 Ocorrências de Não-Conformidade</caption>
@@ -86,4 +93,16 @@
 	</div>
 </body>
 
+<script src="/socket.io/socket.io.js"></script>
+
+<script type="text/javascript">
+	var socket = io();//utilizando o Socket.io para WebSocket no NodeJs
+	socket.on('novaNaoconformidade', function(data){
+		
+		$("#div-msg").show();		
+			
+		$("#info_nc").html("[<b>Data=</b>"+data.data+", <b>Descrição=</b>"+data.descricao+"]");
+		
+	});
+</script>
 </html>

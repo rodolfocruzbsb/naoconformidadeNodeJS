@@ -59,6 +59,10 @@ module.exports = function(app){
 		var dao = new app.infra.NaoconformidadeDAO(connection);
 		
 		dao.salvar(naoconformidade, function(err, results){
+
+			//Notificando via WebSocket quando uma nova Não Conformidade for adicionada. Veja exemplo de notificação em: index.ejs
+			app.get('io').emit('novaNaoconformidade', naoconformidade);
+			
 			res.redirect('/naoconformidade');		
 		});
 		

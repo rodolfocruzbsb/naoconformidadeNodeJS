@@ -1,6 +1,6 @@
 module.exports = function(app){
 	
-	app.get('/', function(req, res){
+	app.get('/', function(req, res, next){
 		var connection = app.infra.connectionFactory();
 		var dao = new app.infra.NaoconformidadeDAO(connection);
 		
@@ -21,8 +21,6 @@ module.exports = function(app){
 	app.post('/login', function(req, res){
 		
 		var login = req.body;				
-		
-		console.log(login);
 		
 		if(login.perfil == 'AUDITOR'){
 			
