@@ -31,7 +31,7 @@ npm -v
 ```
 Saída esperada similar a: 2.15.5
 
-Este passo é opcional, mas caso não o faça, vá para o arquivo package.json e substitua de * "start": "nodemon app.js"* para * "start": "node app.js"*, caso deseje utilizar o nodemon e todos os seus recursos vamos seguir . Instalar [nodemon](http://nodemon.io/) e verificar se foi instalado corretamente, conforme:
+Este passo é opcional, mas caso não o faça, vá para o arquivo package.json e substitua de *start: nodemon app.js* para *start: node app.js*, caso deseje utilizar o nodemon e todos os seus recursos vamos seguir . Instalar [nodemon](http://nodemon.io/) e verificar se foi instalado corretamente, conforme:
 ```sh
 npm install -g nodemon
 nodemon -v
