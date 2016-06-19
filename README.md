@@ -43,3 +43,7 @@ No diretório do projeto, que contém o arquivo package.json execute o seguinte 
 ```sh
 npm start
 ```
+
+## Ver a app no Heroku
+Caso queira dar uma olhada nesta aplicação de exemplo, ela se encontra disponível no [Heroku](https://dashboard.heroku.com/):
+* https://naoconformidade.herokuapp.com/
