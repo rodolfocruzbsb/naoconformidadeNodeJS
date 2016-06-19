@@ -76,7 +76,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% for(var i=0; i< 5;i++){%>
+						<% if(lista.length > 0){%>
+						<% var max = lista.length > 5 ? 5 : lista.length;%>
+						<% for(var i=0; i< max;i++){%>
 							<tr>
 								<td>
 									<%=lista[i].data%>
@@ -85,6 +87,7 @@
 									<%=lista[i].descricao%>
 								</td>
 							</tr>
+						<%}%>
 						<%}%>
 					</tbody>
 				</table>
