@@ -6,7 +6,7 @@ var grupos = urlConn ? urlConn.match(/mysql:\/\/(.*):(.*)@(.*)\/(.*)\?reconnect=
 
 var connectMYSQL = function() {
 	if (!process.env.NODE_ENV) {
-		console.log('>>>>>>>>>>>>>>>>>> BANCO DE DADOS DE DESENVOLVIMENTO');
+		
 		return mysql.createConnection({
 			host : 'localhost',
 			user : 'root',
@@ -16,7 +16,7 @@ var connectMYSQL = function() {
 	}
 
 	if (process.env.NODE_ENV == 'production') {
-		console.log('>>>>>>>>>>>>>>>>>> BANCO DE DADOS DE PRODUCAO');
+		
 		return mysql.createConnection({
 			host : grupos[3],
 			user : grupos[1],
@@ -24,9 +24,9 @@ var connectMYSQL = function() {
 			database : grupos[4]
 		});
 	}
-	
+
 	if (process.env.NODE_ENV == 'test') {
-		console.log('>>>>>>>>>>>>>>>>>> BANCO DE DADOS DE TESTE');
+		
 		return mysql.createConnection({
 			host : 'localhost',
 			user : 'root',
